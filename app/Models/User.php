@@ -18,10 +18,25 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'full_name',
         'email',
         'password',
+        'avatar',
+        'active',
     ];
+    const ACTIVE_YES = 1;
+    const ACTIVE_NO = 0;
+
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+
+    public function isActive(): bool
+    {
+        return $this->active === self::ACTIVE_YES;
+    }
 
     /**
      * The attributes that should be hidden for serialization.

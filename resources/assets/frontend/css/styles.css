@@ -1,0 +1,722 @@
+:root {
+    --primary-color-1: #f79489;
+    --primary-color-2: #fccfd4;
+    --primary-color-3: #d86b6b;
+    --primary-color-4: #fbd9d9;
+    --primary-color-5: #f9b7bb;
+    --primary-color-6: #f9f1f0;
+    --purple-color-1: #d8a0db;
+    --purple-color-2: #e9c9f9;
+    --primary-bg-1: #d9d9d966;
+    --primary-bg-2: #f0f8ff;
+    --bg-list: #fafafa;
+    --color-text: #333;
+    --tw-text-opacity: 1;
+    --success-color: #28a745;
+}
+
+body {
+    font-family: 'Segoe UI', 'Segoe UI Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.color-hover{
+    color: var(--color-text);
+}
+
+.color-hover:hover {
+    color: var(--primary-color-3) !important;
+}
+
+.bg-primary-bg-2 {
+    background: var(--primary-bg-2) !important;
+}
+
+.bg-primary-1 {
+    background: var(--primary-bg-1) !important;
+}
+
+.border-cl-shopee {
+    border: 1px solid var(--primary-color-3) !important;
+}
+
+.color-success-custom {
+    color: var(--success-color) !important;
+}
+
+.bg-success-custom {
+    background: var(--success-color) !important;
+}
+
+.hover-color-1:hover {
+    color: var(--primary-color-1) !important;
+}
+
+.hover-color-2:hover {
+    color: var(--primary-color-2) !important;
+}
+
+.hover-color-3:hover {
+    color: var(--primary-color-3) !important;
+}
+
+.text-gray-600 {
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+
+.text-ssm {
+    font-size: .75rem !important;
+    line-height: 1rem !important;
+}
+
+.color-1 {
+    color: var(--primary-color-1) !important;
+}
+
+.color-2 {
+    color: var(--primary-color-2) !important;
+}
+
+.color-3 {
+    color: var(--primary-color-3) !important;
+}
+
+.color-4 {
+    color: var(--primary-color-4) !important;
+}
+
+.color-5 {
+    color: var(--primary-color-5) !important;
+}
+
+.color-pp-1 {
+    color: var(--purple-color-1) !important;
+}
+
+.color-pp-2 {
+    color: var(--purple-color-2) !important;
+}
+
+.bg-1 {
+    background: var(--primary-color-1) !important;
+}
+
+.bg-2 {
+    background: var(--primary-color-2) !important;
+}
+
+.bg-3 {
+    background: var(--primary-color-3) !important;
+}
+
+.bg-4 {
+    background: var(--primary-color-4) !important;
+}
+
+.bg-5 {
+    background: var(--primary-color-5) !important;
+}
+
+.bg-pp-1 {
+    background: var(--purple-color-1) !important;
+}
+
+.bg-pp-2 {
+    background: var(--purple-color-2) !important;
+}
+
+.bg-list {
+    background: var(--bg-list) !important;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.fs-15 {
+    font-size: 15px;
+}
+
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+
+[aria-expanded="true"] .transition-transform {
+    transform: rotate(180deg);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-menu-item {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.mobile-menu-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.divider {
+    opacity: 0.1;
+}
+
+.mobile-section {
+    padding: 0 10px;
+}
+
+.blink-animation {
+    animation: blink 1s infinite;
+    top: -17px;
+    right: -20px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.space-margins {
+    margin-top: 200px;
+}
+
+/* custom */
+.box-shadow-top {
+    box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.box-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.underline-none {
+    text-decoration: none;
+}
+
+.underline-none.hover:hover {
+    text-decoration: underline;
+}
+
+.btn-rd-05rem {
+    border-radius: .5rem;
+}
+
+.bg-e2e8f0 {
+    background: #e2e8f0;
+}
+
+.line-height-16 {
+    line-height: 16px;
+}
+
+.break-word {
+    word-wrap: break-word;
+}
+
+.white-space-no-wrap-none {
+    white-space: normal !important;
+}
+
+.responsive-text-xs {
+    font-size: 0.5rem;
+}
+
+.responsive-text-small {
+    font-size: 0.75rem;
+}
+
+.responsive-text-medium {
+    font-size: 1rem;
+}
+
+.responsive-text-large {
+    font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+
+    .responsive-text-xs {
+        font-size: 0.75rem;
+    }
+
+    .responsive-text-small {
+        font-size: 1rem;
+    }
+
+    .responsive-text-medium {
+        font-size: 1.25rem;
+    }
+
+    .responsive-text-large {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .responsive-text-small {
+        font-size: 1.25rem;
+    }
+
+    .responsive-text-small.none-lg {
+        font-size: 1rem !important;
+    }
+
+    .lh-lg-none {
+        line-height: normal !important;
+    }
+
+    .responsive-text-medium {
+        font-size: 1.5rem;
+    }
+
+    .responsive-text-large {
+        font-size: 1.75rem;
+    }
+}
+
+.small-input {
+    font-size: 0.75rem;
+}
+
+.small-input::placeholder {
+    font-size: 0.75rem;
+}
+
+
+.medium-input {
+    font-size: 1rem;
+}
+
+.medium-input::placeholder {
+    font-size: 1rem;
+}
+
+.border-cl-shopee {
+    border: 1px solid #ee4d2d;
+}
+
+.cl-00b894 {
+    color: #00b894 !important;
+}
+
+.icon-menu {
+    height: 35px;
+    width: 35px;
+}
+
+.fs-7 {
+    font-size: 0.7em;
+}
+
+.fs-8 {
+    font-size: 0.8em;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+.mt-88 {
+    margin-top: 88px;
+}
+
+.mt-68 {
+    margin-top: 68px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-120 {
+    margin-top: 120px;
+}
+
+.color-a30000 {
+    color: #a30000 !important;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+.fs-9 {
+    font-size: 0.7rem !important;
+}
+
+.cl-8ed7ff {
+    color: #8ed7ff !important;
+}
+
+.cl-8ed7ff:hover {
+    color: #8ed7ff !important;
+}
+
+.cl-8ed7ff:focus {
+    color: #8ed7ff !important;
+}
+
+.cl-cdedff {
+    color: #cdedff !important;
+}
+
+.cl-cdedff:hover {
+    color: #cdedff !important;
+}
+
+.cl-cdedff:focus {
+    color: #cdedff !important;
+}
+
+.cl-ffe371 {
+    color: #ffe371 !important;
+}
+
+.cl-ffe371:hover {
+    color: #ffe371 !important;
+}
+
+.cl-ffe371:focus {
+    color: #ffe371 !important;
+}
+
+.cl-fff3b2 {
+    color: #fff3b2 !important;
+}
+
+.cl-fff3b2:hover {
+    color: #fff3b2 !important;
+}
+
+.cl-fff3b2:focus {
+    color: #fff3b2 !important;
+}
+
+.bg-8ed7ff {
+    background: #8ed7ff !important;
+}
+
+.bg-8ed7ff:hover {
+    background: #8ed7ff !important;
+}
+
+.bg-cdedff {
+    background: #cdedff !important;
+}
+
+.bg-ffe371 {
+    background: #ffe371 !important;
+}
+
+.bg-fff3b2 {
+    background: #fff3b2 !important;
+}
+
+.bg-53e09f {
+    background: #53e09f !important;
+}
+
+.cl-53e09f {
+    color: #53e09f !important;
+}
+
+.hover-cl-8ed7ff:hover {
+    color: #8ed7ff !important;
+}
+
+.hover-cl-53e09f:hover {
+    color: #53e09f !important;
+}
+
+/* ===========================================
+   CUSTOM CONTAINER STYLES
+   =========================================== */
+
+/* Container Custom - Thu nhỏ hơn Bootstrap default */
+.container-custom {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Container Custom Small - Thu nhỏ hơn nữa */
+.container-custom-sm {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Container Custom Extra Small - Thu nhỏ nhất */
+.container-custom-xs {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Container Custom Large - Rộng hơn Bootstrap default */
+.container-custom-lg {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Container Custom Extra Large - Rộng nhất */
+.container-custom-xl {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ===========================================
+   RESPONSIVE CONTAINER CUSTOM
+   =========================================== */
+
+/* Small devices (576px and up) */
+@media (min-width: 576px) {
+    .container-custom {
+        max-width: 500px;
+    }
+    
+    .container-custom-sm {
+        max-width: 450px;
+    }
+    
+    .container-custom-xs {
+        max-width: 400px;
+    }
+    
+    .container-custom-lg {
+        max-width: 600px;
+    }
+    
+    .container-custom-xl {
+        max-width: 700px;
+    }
+}
+
+/* Medium devices (768px and up) */
+@media (min-width: 768px) {
+    .container-custom {
+        max-width: 650px;
+    }
+    
+    .container-custom-sm {
+        max-width: 550px;
+    }
+    
+    .container-custom-xs {
+        max-width: 500px;
+    }
+    
+    .container-custom-lg {
+        max-width: 800px;
+    }
+    
+    .container-custom-xl {
+        max-width: 900px;
+    }
+}
+
+/* Large devices (992px and up) */
+@media (min-width: 992px) {
+    .container-custom {
+        max-width: 850px;
+    }
+    
+    .container-custom-sm {
+        max-width: 750px;
+    }
+    
+    .container-custom-xs {
+        max-width: 650px;
+    }
+    
+    .container-custom-lg {
+        max-width: 1100px;
+    }
+    
+    .container-custom-xl {
+        max-width: 1200px;
+    }
+}
+
+/* Extra large devices (1200px and up) */
+@media (min-width: 1200px) {
+    .container-custom {
+        max-width: 1000px;
+    }
+    
+    .container-custom-sm {
+        max-width: 800px;
+    }
+    
+    .container-custom-xs {
+        max-width: 600px;
+    }
+    
+    .container-custom-lg {
+        max-width: 1300px;
+    }
+    
+    .container-custom-xl {
+        max-width: 1500px;
+    }
+}
+
+/* Extra extra large devices (1400px and up) */
+@media (min-width: 1400px) {
+    .container-custom {
+        max-width: 1000px;
+    }
+    
+    .container-custom-sm {
+        max-width: 800px;
+    }
+    
+    .container-custom-xs {
+        max-width: 600px;
+    }
+    
+    .container-custom-lg {
+        max-width: 1400px;
+    }
+    
+    .container-custom-xl {
+        max-width: 1600px;
+    }
+}
+
+/* ===========================================
+   CONTAINER CUSTOM UTILITIES
+   =========================================== */
+
+/* Container with custom padding */
+.container-custom-padding {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.container-custom-padding-sm {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container-custom-padding-lg {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Container with custom margins */
+.container-custom-margin {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container-custom-margin-sm {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container-custom-margin-lg {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Container with custom background */
+.container-custom-bg {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.container-custom-bg-white {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Container with custom border */
+.container-custom-border {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.container-custom-border-primary {
+    border: 2px solid var(--primary-color-3);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+/* ===========================================
+   RESPONSIVE CONTAINER CUSTOM PADDING
+   =========================================== */
+
+@media (max-width: 575.98px) {
+    .container-custom-padding {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .container-custom-padding-sm {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .container-custom-padding-lg {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .container-custom-bg,
+    .container-custom-bg-white,
+    .container-custom-border,
+    .container-custom-border-primary {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container-custom-bg,
+    .container-custom-bg-white,
+    .container-custom-border,
+    .container-custom-border-primary {
+        padding: 1.5rem;
+    }
+}

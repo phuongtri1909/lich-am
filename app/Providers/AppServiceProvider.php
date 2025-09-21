@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\ProductVariant;
+use App\Models\Promotion;
+use App\Observers\ProductVariantObserver;
+use App\Observers\PromotionObserver;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +25,27 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Schema::defaultStringLength(191);
+
+        // Check if database and table exist before querying
+        $logoSite = null;
+        try {
+            if (Schema::hasTable('logo_sites')) {
+                $logoSite = \App\Models\LogoSite::first();
+            }
+        } catch (\Exception $e) {
+            // Ignore database errors during migration
+        }
+
+        $logoPath = $logoSite && $logoSite->logo
+            ? Storage::url($logoSite->logo)
+            : asset('images/logo/logo-site.png');
+
+        $faviconPath = $logoSite && $logoSite->favicon
+            ? Storage::url($logoSite->favicon)
+            : asset('favicon.ico');
+
+        view()->share('faviconPath', $faviconPath);
+        view()->share('logoPath', $logoPath);
     }
 }

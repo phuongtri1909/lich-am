@@ -5,9 +5,26 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: [
+                'resources/assets/frontend/css/styles.css',
+                'resources/assets/frontend/css/header.css',
+                'resources/assets/frontend/css/home.css',
+            ],
             refresh: true,
         }),
         tailwindcss(),
     ],
+    server: {
+        host: 'licham.local',
+        port: 5173,
+        strictPort: true,
+        cors: true,
+        hmr: {
+            host: 'licham.local',
+            protocol: 'http',
+            port: 5173,
+        },
+    },
+    
+    
 });

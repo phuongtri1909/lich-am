@@ -1,0 +1,408 @@
+/* ===========================================
+   HEADER STYLES - SIMPLE & CLEAN
+   =========================================== */
+
+/* Body padding for fixed header */
+body {
+    padding-top: 60px;
+    transition: padding-top 0.3s ease;
+}
+
+/* Header Main Container */
+.header-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    background: #006e33;
+    border-bottom: 1px solid #1a3d1a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Custom Container */
+.header-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+}
+
+/* Logo Section */
+.header-custom .d-flex:first-child {
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-custom img {
+    height: 30px;
+    width: auto;
+}
+
+/* Desktop Navigation */
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.header-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.header-nav a.active {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+}
+
+/* Clock and Time Display */
+.time-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.clock-icon {
+    width: 16px;
+    height: 16px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+}
+
+/* Dropdown Indicators */
+.dropdown-indicator {
+    display: inline-block;
+    margin-left: 0.25rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.header-nav a:hover .dropdown-indicator {
+    transform: rotate(180deg);
+}
+
+/* Mobile Menu Button */
+.btn.border.rounded-circle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease;
+}
+
+.btn.border.rounded-circle:hover {
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.05);
+}
+
+.btn.border.rounded-circle img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+/* Mobile Side Menu Overlay */
+.mobile-side-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-side-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Side Menu */
+.mobile-side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background: #2d5a27;
+    z-index: 1050;
+    transition: all 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+}
+
+.mobile-side-menu.active {
+    right: 0;
+}
+
+/* Mobile Menu Header */
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1a3d1a;
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+/* Mobile Navigation List */
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-list a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mobile-nav-list a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    padding-left: 1.5rem;
+}
+
+.mobile-nav-list a.active {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+}
+
+/* Mobile Time Display */
+.mobile-time-display {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ===========================================
+   RESPONSIVE BREAKPOINTS
+   =========================================== */
+
+/* Large devices (992px and up) */
+@media (min-width: 992px) {
+    .header-custom {
+        min-height: 70px;
+    }
+}
+
+/* Medium devices (768px and up) */
+@media (min-width: 768px) {
+    .mobile-side-menu {
+        width: 350px;
+    }
+}
+
+/* Small devices (576px and down) */
+@media (max-width: 575.98px) {
+    body {
+        padding-top: 55px;
+    }
+    
+    .header-custom {
+        padding: 0.5rem 0;
+        min-height: 55px;
+    }
+    
+    .mobile-side-menu {
+        width: 280px;
+    }
+    
+    .mobile-menu-header {
+        padding: 0.75rem;
+    }
+    
+    .mobile-nav-list a {
+        padding: 0.875rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn.border.rounded-circle {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .btn.border.rounded-circle img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Extra Small devices (480px and down) */
+@media (max-width: 479.98px) {
+    .header-custom {
+        padding: 0.4rem 0;
+        min-height: 50px;
+    }
+    
+    .mobile-side-menu {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .mobile-side-menu.active {
+        right: 0;
+    }
+}
+
+/* ===========================================
+   SCROLL BEHAVIOR & ANIMATIONS
+   =========================================== */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header scroll animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header-main {
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Mobile menu slide animation */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.mobile-side-menu.active {
+    animation: slideInRight 0.3s ease-out;
+}
+
+/* ===========================================
+   ACCESSIBILITY & FOCUS STATES
+   =========================================== */
+
+/* Focus states for accessibility */
+.header-nav a:focus,
+.mobile-nav-list a:focus,
+.btn.border.rounded-circle:focus,
+.mobile-menu-close:focus {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .header-main {
+        background: #006e33;
+        border-bottom: 2px solid #000;
+    }
+    
+    .header-nav a {
+        color: #fff;
+    }
+    
+    .header-nav a:hover,
+    .header-nav a.active {
+        background: #000;
+        color: white;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .header-main,
+    .mobile-side-menu,
+    .mobile-side-menu-overlay,
+    .header-nav a,
+    .btn.border.rounded-circle {
+        transition: none;
+    }
+    
+    .header-main {
+        animation: none;
+    }
+    
+    .mobile-side-menu.active {
+        animation: none;
+    }
+}
+
+/* ===========================================
+   PRINT STYLES
+   =========================================== */
+
+@media print {
+    .header-main {
+        position: static;
+        background: #006e33;
+        box-shadow: none;
+        border-bottom: 1px solid #1a3d1a;
+    }
+    
+    .mobile-side-menu,
+    .mobile-side-menu-overlay,
+    .btn.border.rounded-circle {
+        display: none !important;
+    }
+}
