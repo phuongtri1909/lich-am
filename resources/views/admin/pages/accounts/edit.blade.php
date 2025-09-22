@@ -25,12 +25,6 @@
                     <i class="fas fa-clock"></i>
                     <span>Ngày tạo: {{ $account->created_at->format('d/m/Y H:i') }}</span>
                 </div>
-                @if($account->email === $adminEmail)
-                    <div class="admin-badge">
-                        <i class="fas fa-crown"></i>
-                        <span>Super Admin</span>
-                    </div>
-                @endif
             </div>
         </div>
         <div class="form-body">

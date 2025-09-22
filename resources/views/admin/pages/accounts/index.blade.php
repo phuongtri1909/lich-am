@@ -65,13 +65,6 @@
                                     <td>
                                         <div class="user-info">
                                             <div class="user-name">{{ $user->full_name }}</div>
-                                            <div class="user-role">
-                                                @if($user->email === $adminEmail)
-                                                    <span class="role-badge admin">Super Admin</span>
-                                                @else
-                                                    <span class="role-badge user">{{ ucfirst($user->role) }}</span>
-                                                @endif
-                                            </div>
                                         </div>
                                     </td>
                                     <td>
@@ -89,7 +82,7 @@
                                             <a href="{{ route('admin.accounts.edit', $user) }}" class="action-icon edit-icon text-decoration-none" title="Chỉnh sửa">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            @if($user->email !== $adminEmail && $user->id !== auth()->id())
+                                            @if($user->id !== auth()->id())
                                                 @include('components.delete-form', [
                                                     'id' => $user->id,
                                                     'route' => route('admin.accounts.destroy', $user),

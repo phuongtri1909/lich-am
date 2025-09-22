@@ -1,0 +1,294 @@
+/* ===== OTHER MONTHS COMPONENT ===== */
+.other-months-section {
+    background: linear-gradient(135deg, var(--primary-color-2) 0%, #0a5a0a 100%);
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 30px 0;
+    position: relative;
+}
+
+.other-months-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.other-months-header {
+    padding: 30px 30px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.other-months-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 10px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.other-months-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.other-months-content {
+    padding: 0 30px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.months-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.month-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px 15px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+    border: 2px solid transparent;
+}
+
+.month-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.month-card:hover::before {
+    left: 100%;
+}
+
+.month-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color-1);
+}
+
+.month-card.current-month {
+    background: var(--primary-color-1);
+    color: white;
+    border-color: var(--primary-color-1);
+    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+}
+
+.month-card.current-month:hover {
+    background: #e55a00;
+    border-color: #e55a00;
+}
+
+.month-number {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--primary-color-2);
+}
+
+.month-card.current-month .month-number {
+    color: white;
+}
+
+.month-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.month-card.current-month .month-name {
+    color: white;
+}
+
+.current-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary-color-3);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+    transform: rotate(15deg);
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.year-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px 20px;
+    backdrop-filter: blur(10px);
+}
+
+.year-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.year-nav-btn:hover {
+    color: aliceblue;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.current-year {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .other-months-header {
+        padding: 25px 20px 15px;
+    }
+    
+    .other-months-title {
+        font-size: 20px;
+    }
+    
+    .other-months-content {
+        padding: 0 20px 25px;
+    }
+    
+    .months-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+    
+    .month-card {
+        padding: 15px 10px;
+    }
+    
+    .month-number {
+        font-size: 24px;
+    }
+    
+    .month-name {
+        font-size: 11px;
+    }
+    
+    .year-navigation {
+        gap: 15px;
+        padding: 12px 15px;
+    }
+    
+    .year-nav-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .current-year {
+        font-size: 18px;
+        padding: 8px 15px;
+        min-width: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .other-months-header {
+        padding: 20px 15px 10px;
+    }
+    
+    .other-months-title {
+        font-size: 18px;
+    }
+    
+    .other-months-subtitle {
+        font-size: 12px;
+    }
+    
+    .other-months-content {
+        padding: 0 15px 20px;
+    }
+    
+    .months-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .month-card {
+        padding: 12px 8px;
+    }
+    
+    .month-number {
+        font-size: 20px;
+    }
+    
+    .month-name {
+        font-size: 10px;
+    }
+    
+    .current-badge {
+        font-size: 9px;
+        padding: 3px 6px;
+        min-height: 18px;
+        border-radius: 10px;
+        top: -6px;
+        right: -6px;
+    }
+    
+    .year-navigation {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .year-nav-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    
+    .current-year {
+        font-size: 16px;
+        padding: 8px 20px;
+        min-width: 60px;
+    }
+}

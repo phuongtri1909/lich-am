@@ -10,7 +10,7 @@
     <title>@yield('title', 'Admin Dashboard') - {{ env('APP_NAME') }}</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ $faviconPath  }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/styles_admin.css?v=' . time()) }}">
+    @vite('resources/assets/admin/css/styles_admin.css')
 
     <!-- Page specific CSS -->
     @stack('styles')
@@ -52,7 +52,6 @@
     @include('components.sweetalert')
     @include('components.toast-main')
     @include('components.toast')
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <!-- Page specific JS -->
     @stack('scripts')
 </body>

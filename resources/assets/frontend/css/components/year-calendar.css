@@ -1,0 +1,297 @@
+/* ===== YEAR CALENDAR COMPONENT ===== */
+.year-calendar-container {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.year-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color-2);
+}
+
+.year-header h2 {
+    color: var(--primary-color-2);
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.year-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: white;
+    color: var(--primary-color-2);
+    text-decoration: none;
+    border: 2px solid var(--primary-color-2);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--primary-color-2);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11, 115, 11, 0.3);
+}
+
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.year-month-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.year-month-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.month-header {
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color-2);
+}
+
+.month-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.month-link:hover {
+    transform: scale(1.05);
+}
+
+.month-header h3 {
+    color: var(--primary-color-2);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.month-link:hover h3 {
+    color: var(--primary-color-1);
+}
+
+.calendar-days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    margin-bottom: 10px;
+}
+
+.day-header {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-color-2);
+    padding: 8px 4px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.year-month-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1px;
+}
+
+.year-month-grid .calendar-day {
+    aspect-ratio: 1;
+    min-height: 40px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.year-month-grid .calendar-day:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.year-month-grid .gregorian-day {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.year-month-grid .lunar-day {
+    font-size: 8px;
+}
+
+.year-month-grid .day-name {
+    font-size: 7px;
+}
+
+/* Day states */
+.year-month-grid .calendar-day.prev-month,
+.year-month-grid .calendar-day.next-month {
+    background: #f8f9fa;
+    color: #6c757d;
+    opacity: 0.6;
+}
+
+.year-month-grid .calendar-day.prev-month:hover,
+.year-month-grid .calendar-day.next-month:hover {
+    background: #e9ecef;
+    opacity: 0.8;
+}
+
+.year-month-grid .calendar-day.current-day {
+    background: #fff3cd !important;
+    border: 2px solid #ffc107;
+}
+
+.year-month-grid .calendar-day.good {
+    background: rgba(255, 102, 0, 0.1);
+}
+
+.year-month-grid .calendar-day.bad {
+    background: rgba(0, 110, 51, 0.1);
+}
+
+.year-month-grid .calendar-day.normal {
+    background: white;
+}
+
+/* Auspicious dots */
+.year-month-grid .auspicious-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.year-month-grid .auspicious-dot.good {
+    background: var(--primary-color-1);
+}
+
+.year-month-grid .auspicious-dot.bad {
+    background: var(--primary-color-3);
+}
+
+.year-month-grid .auspicious-dot.normal {
+    background: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .year-calendar-container {
+        padding: 20px;
+    }
+    
+    .year-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .year-header h2 {
+        font-size: 24px;
+    }
+    
+    .year-nav {
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    .year-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .year-month-card {
+        padding: 15px;
+    }
+    
+    .month-header h3 {
+        font-size: 18px;
+    }
+    
+    .year-month-grid .calendar-day {
+        min-height: 35px;
+    }
+    
+    .year-month-grid .gregorian-day {
+        font-size: 11px;
+    }
+    
+    .year-month-grid .lunar-day {
+        font-size: 7px;
+    }
+    
+    .year-month-grid .day-name {
+        font-size: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .year-calendar-container {
+        padding: 15px;
+    }
+    
+    .year-header h2 {
+        font-size: 20px;
+    }
+    
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .year-month-card {
+        padding: 12px;
+    }
+    
+    .month-header h3 {
+        font-size: 16px;
+    }
+    
+    .year-month-grid .calendar-day {
+        min-height: 30px;
+    }
+    
+    .year-month-grid .gregorian-day {
+        font-size: 10px;
+    }
+    
+    .year-month-grid .lunar-day {
+        font-size: 6px;
+    }
+    
+    .year-month-grid .day-name {
+        font-size: 5px;
+    }
+}

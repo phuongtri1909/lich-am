@@ -1,0 +1,278 @@
+/* ===== DATE CARD COMPONENT ===== */
+
+.date-card-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Date Card Header */
+.date-card-header {
+    background: var(--primary-color-1);
+    color: white;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.month-text {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.year-text {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.day-text {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Top Section */
+.date-card-top {
+    margin-bottom: 30px;
+    padding: 20px 40px 0 40px;
+}
+
+.today-button {
+    background: transparent;
+    color: var(--primary-color-2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid var(--primary-color-2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.today-button:hover {
+    background: rgba(76, 175, 80, 0.1);
+    transform: translateY(-1px);
+}
+
+.today-button.active {
+    background: var(--primary-color-2);
+    color: white;
+    border-color: var(--primary-color-2);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.today-button.active:hover {
+    background: var(--primary-color-1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.today-button i {
+    font-size: 12px;
+}
+
+.week-info {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Main Date Display */
+.main-date-display {
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 0 40px;
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    font-size: 100px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 25px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.nav-arrow:hover {
+    color: var(--text-primary);
+}
+
+.main-date-number {
+    font-size: 120px;
+    font-weight: 900;
+    color: var(--primary-color-1);
+    line-height: 1;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Quote Section */
+.quote-section {
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.quote-bracket {
+    font-size: 24px;
+    color: var(--primary-color-2);
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.quote-content {
+    flex: 1;
+}
+
+.quote-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.quote-principle {
+    display: contents;
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Solar Term Info */
+.solar-term-info {
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background: var(--bg-accent);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color-2);
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.solar-term-text {
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.solar-term-name {
+    color: var(--primary-color-2);
+    font-weight: 600;
+}
+
+.moon-icon {
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+/* Bottom Info Grid */
+
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-column.center {
+    text-align: center;
+}
+
+.info-item {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.lunar-day-number {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--primary-color-2);
+    line-height: 1;
+    margin: 10px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .date-card-container {
+        padding: 30px 20px;
+    }
+    
+    .main-date-number {
+        font-size: 80px;
+    }
+    
+    .lunar-day-number {
+        font-size: 36px;
+    }
+    
+    .info-column.center {
+        text-align: left;
+    }
+    
+    .quote-text {
+        font-size: 14px;
+    }
+    
+    .solar-term-info {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .date-card-container {
+        padding: 20px 15px;
+    }
+    
+    .main-date-number {
+        font-size: 60px;
+    }
+    
+    .lunar-day-number {
+        font-size: 28px;
+    }
+    
+    .quote-text {
+        font-size: 13px;
+    }
+    
+    .quote-principle {
+        font-size: 11px;
+    }
+    
+    .nav-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+    
+    .main-date-display {
+        gap: 15px;
+    }
+}

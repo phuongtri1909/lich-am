@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('seo_settings', function (Blueprint $table) {
             $table->id();
-            $table->string('page_key')->unique(); // home, about, contact, gallery, news, projects
+            $table->string('page_key')->unique();
             $table->json('title'); 
             $table->json('description'); 
             $table->json('keywords'); 

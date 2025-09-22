@@ -2,11 +2,8 @@
 
 namespace App\Providers;
 
-use App\Models\ProductVariant;
-use App\Models\Promotion;
-use App\Observers\ProductVariantObserver;
-use App\Observers\PromotionObserver;
-use Illuminate\Support\Facades\Storage;
+use App\Models\Social;
+use App\Models\MetaTag;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,25 +24,24 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        // Check if database and table exist before querying
-        $logoSite = null;
-        try {
-            if (Schema::hasTable('logo_sites')) {
-                $logoSite = \App\Models\LogoSite::first();
-            }
-        } catch (\Exception $e) {
-            // Ignore database errors during migration
-        }
-
-        $logoPath = $logoSite && $logoSite->logo
-            ? Storage::url($logoSite->logo)
-            : asset('images/logo/logo-site.png');
-
-        $faviconPath = $logoSite && $logoSite->favicon
-            ? Storage::url($logoSite->favicon)
-            : asset('favicon.ico');
-
+        // Load assets paths
+        $faviconPath = asset('images/logo/favicon.ico');
+        $logoPath = asset('images/logo/logo-site.png');
+        
+        // Load social links (only active ones, ordered by sort_order)
+        $socials = Social::active()->orderBy('sort_order')->get();
+        
+        // Load meta tags (only active ones, keyed by name for easy access)
+        $metaTags = MetaTag::active()->get()->keyBy('name');
+        
+        // Share with all views
         view()->share('faviconPath', $faviconPath);
         view()->share('logoPath', $logoPath);
+        view()->share('socials', $socials);
+        view()->share('metaTags', $metaTags);
+        
+        // Share specific meta tags for easier access
+        view()->share('headerMetaTags', $metaTags->get('header'));
+        view()->share('footerMetaTags', $metaTags->get('footer'));
     }
 }

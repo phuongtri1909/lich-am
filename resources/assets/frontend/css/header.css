@@ -62,11 +62,6 @@ body {
     transform: translateY(-1px);
 }
 
-.header-nav a.active {
-    background: rgba(255, 255, 255, 0.2);
-    font-weight: 700;
-}
-
 /* Clock and Time Display */
 .time-display {
     display: flex;
@@ -405,4 +400,99 @@ html {
     .btn.border.rounded-circle {
         display: none !important;
     }
+}
+
+/* ===========================================
+   DROPDOWN STYLES
+   =========================================== */
+
+/* Desktop Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    border: 2px solid var(--primary-color-2);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    min-width: 150px;
+    z-index: 1000;
+    display: none;
+    padding: 8px 0;
+    margin-top: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: var(--primary-color-2);
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown {
+    position: relative;
+}
+
+.mobile-dropdown-menu {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 8px 0;
+    padding: 8px 0;
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu {
+    display: block;
+}
+
+.mobile-dropdown-menu li {
+    list-style: none;
+}
+
+.mobile-dropdown-menu a {
+    display: block;
+    padding: 8px 20px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mobile-dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding-left: 30px;
+}
+
+.header-nav .dropdown-item {
+    color: var(--primary-color-1);
+}
+
+.header-nav .dropdown-item:hover {
+    background-color: var(--primary-color-2);
+    color: white;
 }

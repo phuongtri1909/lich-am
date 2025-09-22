@@ -1,7 +1,7 @@
 :root {
-    --primary-color-1: #f79489;
-    --primary-color-2: #fccfd4;
-    --primary-color-3: #d86b6b;
+    --primary-color-1: #f60;
+    --primary-color-2: #0b730b;
+    --primary-color-3: #006e33;
     --primary-color-4: #fbd9d9;
     --primary-color-5: #f9b7bb;
     --primary-color-6: #f9f1f0;
@@ -16,7 +16,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', 'Segoe UI Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .color-hover{
@@ -159,6 +160,17 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.btn-pry:hover, .btn-pry:focus {
+    background-color: var(--primary-color-1) !important;
+    color: var(--primary-color) !important;
+    box-shadow: 0 4px 10px rgba(91, 60, 37, 0.2) !important;
+}
+
+.btn-pry{
+    background: var(--primary-color-1);
+    color: #fff;
 }
 
 .mobile-menu-item {
@@ -720,3 +732,18 @@ body {
         padding: 1.5rem;
     }
 }
+
+.custom-zalo {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/50px-Icon_of_Zalo.svg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    vertical-align: -0.125em;
+}
+
+.social-icon .custom-zalo {
+    font-size: 1.2em;
+} 

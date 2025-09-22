@@ -1,0 +1,124 @@
+/* ===== BREADCRUMB COMPONENT ===== */
+
+.breadcrumb-nav {
+   margin-left: 10px;
+}
+
+.breadcrumb-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+.breadcrumb-item {
+    margin-left: -2px;
+}
+
+.breadcrumb-item:first-child .breadcrumb-link {
+    border-radius: 8px 0 0 8px;
+}
+
+.breadcrumb-item:last-child .breadcrumb-current {
+    border-radius: 0 8px 8px 0;
+}
+
+.breadcrumb-link {
+    background-color: #fff;
+    color: var(--color-text);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #d1d5db;
+    height: 2.5em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    border-radius: 0;
+    transform: skew(-30deg);
+    position: relative;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.breadcrumb-link:hover,
+.breadcrumb-link:focus {
+    outline: 0;
+    color: var(--primary-color-2);
+    border-color: var(--primary-color-2);
+    z-index: 1;
+}
+
+.breadcrumb-current {
+    background-color: var(--primary-color-2);
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid var(--primary-color-2);
+    height: 2.5em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    border-radius: 0;
+    transform: skew(-30deg);
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: skew(30deg);
+}
+
+.breadcrumb-content svg {
+    margin-right: 0.5em;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.breadcrumb-current svg {
+    margin-right: 0.5em;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/* Responsive Breadcrumb */
+@media (max-width: 768px) {
+    .breadcrumb-link,
+    .breadcrumb-current {
+        height: 2em;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 0.9rem;
+    }
+    
+    .breadcrumb-content svg,
+    .breadcrumb-current svg {
+        width: 1em;
+        height: 1em;
+        margin-right: 0.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .breadcrumb-link,
+    .breadcrumb-current {
+        height: 1.8em;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+        font-size: 0.8rem;
+    }
+    
+    .breadcrumb-content svg,
+    .breadcrumb-current svg {
+        width: 0.9em;
+        height: 0.9em;
+        margin-right: 0.2em;
+    }
+}

@@ -5,7 +5,7 @@
         <!-- Sidebar -->
         <div id="sidebar" class="sidebar">
             <div class="sidebar-header">
-                <img src="{{  $logoPath }}" alt="logo" height="40">
+                <img src="{{ asset('images/logo/logo-site.png') }}" alt="logo" height="40">
                 <button id="close-sidebar" class="close-sidebar d-md-none">
                     <i class="fas fa-times"></i>
                 </button>
@@ -19,202 +19,7 @@
                         </a>
                     </li>
 
-                    <li
-                        class="has-submenu {{ Route::currentRouteNamed(['admin.banner-homes.*', 'admin.image-homes.*', 'admin.general-introductions.*', 'admin.intro-features.*', 'admin.intro-locations.*', 'admin.slide-locations.*', 'admin.intro-images.*']) ? 'open' : '' }}">
-                        <a href="#" class="submenu-toggle">
-                            <i class="fas fa-home"></i>
-                            <span>Trang chủ</span>
-                            <i class="fas fa-chevron-down submenu-arrow"></i>
-                        </a>
-                        <ul class="submenu">
-                            <li class="{{ Route::currentRouteNamed('admin.banner-homes.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.banner-homes.index') }}">
-                                    <i class="fa-solid fa-home"></i>
-                                    <span>Banner Trang Chủ</span>
-                                </a>
-                            </li>
-                            <li class="{{ Route::currentRouteNamed(['admin.general-introductions.*', 'admin.intro-features.*']) ? 'active' : '' }}">
-                                <a href="{{ route('admin.general-introductions.index') }}">
-                                    <i class="fas fa-info-circle"></i>
-                                    <span>Giới Thiệu Chung</span>
-                                </a>
-                            </li>
-                            <li class="{{ Route::currentRouteNamed('admin.intro-locations.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.intro-locations.index') }}">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Giới Thiệu Vị Trí</span>
-                                </a>
-                            </li>
-                            <li class="{{ Route::currentRouteNamed('admin.slide-locations.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.slide-locations.index') }}">
-                                    <i class="fas fa-images"></i>
-                                    <span>Slide Vị Trí</span>
-                                </a>
-                            </li>
-                            <li class="{{ Route::currentRouteNamed('admin.image-homes.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.image-homes.index') }}">
-                                    <i class="fas fa-images"></i>
-                                    <span>Hình Ảnh Trang Chủ</span>
-                                </a>
-                            </li>
-                            <li class="{{ Route::currentRouteNamed('admin.intro-images.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.intro-images.index') }}">
-                                    <i class="fas fa-image"></i>
-                                    <span>Ảnh Giới Thiệu</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li
-                        class="has-submenu {{ Route::currentRouteNamed(['admin.vision-missions.*', 'admin.features.*', 'admin.industries.*', 'admin.image-homes-about.*', 'admin.intro-images-about.*', 'admin.slide-locations-about.*']) ? 'open' : '' }}">
-                        <a href="#" class="submenu-toggle">
-                            <i class="fas fa-info-circle"></i>
-                            <span>Trang giới thiệu</span>
-                            <i class="fas fa-chevron-down submenu-arrow"></i>
-                        </a>
-                        <ul class="submenu">
-
-                            <li class="{{ Route::currentRouteNamed('admin.banner-pages.edit') && request()->get('page') == 'about' ? 'active' : '' }}">
-                                <a href="{{ route('admin.banner-pages.edit', ['page' => 'about']) }}">
-                                    <i class="fas fa-image"></i>
-                                    <span>Banner Về Chúng Tôi</span>
-                                </a>
-                            </li>
-                            
-                            <li class="{{ Route::currentRouteNamed('admin.vision-missions.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.vision-missions.index') }}">
-                                    <i class="fas fa-eye"></i>
-                                    <span>Tầm Nhìn & Sứ Mệnh</span>
-                                </a>
-                            </li>
-
-                            <li class="{{ Route::currentRouteNamed('admin.features.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.features.index') }}">
-                                    <i class="fas fa-cog"></i>
-                                    <span>Feature Section</span>
-                                </a>
-                            </li>
-                            <li class="{{ Route::currentRouteNamed('admin.image-homes-about.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.image-homes-about.index') }}">
-                                    <i class="fas fa-images"></i>
-                                    <span>Hình Ảnh Trang About</span>
-                                </a>
-                            </li>
-
-                            <li class="{{ Route::currentRouteNamed('admin.intro-images-about.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.intro-images-about.index') }}">
-                                    <i class="fas fa-image"></i>
-                                    <span>Ảnh Giới Thiệu</span>
-                                </a>
-                            </li>
-
-                            <li class="{{ Route::currentRouteNamed('admin.slide-locations-about.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.slide-locations-about.index') }}">
-                                    <i class="fas fa-images"></i>
-                                    <span>Slide Vị Trí</span>
-                                </a>
-                            </li>
-
-                            <li class="{{ Route::currentRouteNamed('admin.industries.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.industries.index') }}">
-                                    <i class="fas fa-industry"></i>
-                                    <span>Ngành Công Nghiệp</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="{{ Route::currentRouteNamed('admin.projects.*') ? 'active' : '' }}">
-                        <a href="{{ route('admin.projects.index') }}">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>Dự Án</span>
-                        </a>
-                    </li>
-
-                    <!-- Quản lý nội dung -->
-                    <li
-                        class="has-submenu {{ Route::currentRouteNamed(['admin.blogs.*', 'admin.category-blogs.*']) || (Route::currentRouteNamed('admin.banner-pages.edit') && request()->get('page') == 'news') ? 'open' : '' }}">
-                        <a href="#" class="submenu-toggle">
-                            <i class="fas fa-newspaper"></i>
-                            <span>Trang tin tức</span>
-                            <i class="fas fa-chevron-down submenu-arrow"></i>
-                        </a>
-                        <ul class="submenu">
-                            
-                            <li class="{{ Route::currentRouteNamed('admin.banner-pages.edit') && request()->get('page') == 'news' ? 'active' : '' }}">
-                                <a href="{{ route('admin.banner-pages.edit', ['page' => 'news']) }}">
-                                    <i class="fas fa-image"></i>
-                                    <span>Banner Trang Tin Tức</span>
-                                </a>
-                            </li>
-
-                            <li class="{{ Route::currentRouteNamed('admin.category-blogs.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.category-blogs.index') }}">
-                                    <i class="fa-solid fa-list"></i>
-                                    <span>Danh mục Tin Tức</span>
-                                </a>
-                            </li>
-
-                            <li class="{{ Route::currentRouteNamed('admin.blogs.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.blogs.index') }}">
-                                    <i class="fa-regular fa-newspaper"></i>
-                                    <span>Tin Tức</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li
-                        class="has-submenu {{ Route::currentRouteNamed('admin.galleries.*') || (Route::currentRouteNamed('admin.banner-pages.edit') && request()->get('page') == 'gallery') ? 'open' : '' }}">
-                        <a href="#" class="submenu-toggle">
-                            <i class="fas fa-images"></i>
-                            <span>Trang hình ảnh</span>
-                            <i class="fas fa-chevron-down submenu-arrow"></i>
-                        </a>
-                        <ul class="submenu">
-                            <li class="{{ Route::currentRouteNamed('admin.banner-pages.edit') && request()->get('page') == 'gallery' ? 'active' : '' }}">
-                                <a href="{{ route('admin.banner-pages.edit', ['page' => 'gallery']) }}">
-                                    <i class="fas fa-image"></i>
-                                    <span>Banner Trang Hình Ảnh</span>
-                                </a>
-                            </li>
-                            <li class="{{ Route::currentRouteNamed('admin.galleries.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.galleries.index') }}">
-                                    <i class="fa-solid fa-list"></i>
-                                    <span>Hình Ảnh</span>
-                                </a>
-                            </li>
-
-                           
-                        </ul>
-                    </li>
-
-                    <li
-                        class="has-submenu {{ Route::currentRouteNamed('admin.contacts.*') || (Route::currentRouteNamed('admin.banner-pages.edit') && request()->get('page') == 'contact') ? 'open' : '' }}">
-                        <a href="#" class="submenu-toggle">
-                            <i class="fas fa-envelope"></i>
-                            <span>Trang liên hệ</span>
-                            <i class="fas fa-chevron-down submenu-arrow"></i>
-                        </a>
-                        <ul class="submenu">
-                            <li class="{{ Route::currentRouteNamed('admin.banner-pages.edit') && request()->get('page') == 'contact' ? 'active' : '' }}">
-                                <a href="{{ route('admin.banner-pages.edit', ['page' => 'contact']) }}">
-                                    <i class="fas fa-image"></i>
-                                    <span>Banner Trang Liên Hệ</span>
-                                </a>
-                            </li>
-                            <li class="{{ Route::currentRouteNamed('admin.contacts.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.contacts.index') }}">
-                                    <i class="fa-solid fa-list"></i>
-                                    <span>Nhận thông tin liên hệ</span>
-                                </a>
-                            </li>
-
-                            
-                        </ul>
-                    </li>
+                    
 
                     <!-- Quản lý tài khoản -->
                     <li class="{{ Route::currentRouteNamed('admin.accounts.*') ? 'active' : '' }}">
@@ -226,7 +31,7 @@
 
                     <!-- Cấu hình hệ thống -->
                     <li
-                        class="has-submenu {{ Route::currentRouteNamed(['admin.socials.*', 'admin.logo-site.*', 'admin.languages.*', 'admin.seo.*']) || request()->is('admin/users*') || request()->is('admin/settings*') || request()->is('admin/setting-order*') ? 'open' : '' }}">
+                        class="has-submenu {{ Route::currentRouteNamed(['admin.socials.*', 'admin.logo-site.*', 'admin.languages.*', 'admin.seo.*', 'admin.meta-tags.*']) || request()->is('admin/users*') || request()->is('admin/settings*') || request()->is('admin/setting-order*') ? 'open' : '' }}">
                         <a href="#" class="submenu-toggle">
                             <i class="fas fa-cogs"></i>
                             <span>Cấu hình hệ thống</span>
@@ -239,29 +44,18 @@
                                     <span>Mạng xã hội</span>
                                 </a>
                             </li>
-                            <li class="{{ Route::currentRouteNamed('admin.logo-site.edit') ? 'active' : '' }}">
-                                <a href="{{ route('admin.logo-site.edit') }}">
-                                    <i class="fas fa-image"></i>
-                                    <span>Logo Site</span>
-                                </a>
-                            </li>
-                            <li class="{{ Route::currentRouteNamed('admin.languages.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.languages.index') }}">
-                                    <i class="fas fa-language"></i>
-                                    <span>Quản lý ngôn ngữ</span>
+                           
+                            <li class="{{ Route::currentRouteNamed('admin.seo.*') ? 'active' : '' }}">
+                                <a href="{{ route('admin.seo.index') }}">
+                                    <i class="fas fa-search"></i>
+                                    <span>SEO</span>
                                 </a>
                             </li>
 
-                            <li class="{{ Route::currentRouteNamed('admin.setting.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.setting.index') }}">
-                                    <i class="fas fa-cog"></i>
-                                    <span>Cài đặt</span>
-                                </a>
-                            </li>
-                            <li class="{{ Route::currentRouteNamed('admin.seo.*') ? 'active' : '' }}">
-                                <a href="{{ route('admin.seo.index') }}">
-                                    <i class="fas fa-cog"></i>
-                                    <span>SEO</span>
+                            <li class="{{ Route::currentRouteNamed('admin.meta-tags.*') ? 'active' : '' }}">
+                                <a href="{{ route('admin.meta-tags.index') }}">
+                                    <i class="fas fa-code"></i>
+                                    <span>Meta Tags</span>
                                 </a>
                             </li>
                         </ul>

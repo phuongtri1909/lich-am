@@ -1,0 +1,217 @@
+/* ===== OTHER YEARS COMPONENT ===== */
+.other-years-section {
+    background: linear-gradient(135deg, var(--primary-color-3) 0%, #004d1a 100%);
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 30px 0;
+    position: relative;
+}
+
+.other-years-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.other-years-header {
+    padding: 30px 30px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.other-years-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 10px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.other-years-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.other-years-content {
+    padding: 0 30px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.years-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+
+.year-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px 15px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+    border: 2px solid transparent;
+}
+
+.year-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.year-card:hover::before {
+    left: 100%;
+}
+
+.year-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color-3);
+}
+
+.year-card.current-year {
+    background: var(--primary-color-3);
+    color: white;
+    border-color: var(--primary-color-3);
+    box-shadow: 0 5px 15px rgba(0, 110, 51, 0.3);
+}
+
+.year-card.current-year:hover {
+    background: #004d1a;
+    border-color: #004d1a;
+}
+
+.year-number {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--primary-color-3);
+}
+
+.year-card.current-year .year-number {
+    color: white;
+}
+
+.year-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.year-card.current-year .year-label {
+    color: white;
+}
+
+.current-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary-color-1);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+    transform: rotate(15deg);
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .other-years-header {
+        padding: 25px 20px 15px;
+    }
+    
+    .other-years-title {
+        font-size: 20px;
+    }
+    
+    .other-years-content {
+        padding: 0 20px 25px;
+    }
+    
+    .years-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+    
+    .year-card {
+        padding: 15px 10px;
+    }
+    
+    .year-number {
+        font-size: 24px;
+    }
+    
+    .year-label {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .other-years-header {
+        padding: 20px 15px 10px;
+    }
+    
+    .other-years-title {
+        font-size: 18px;
+    }
+    
+    .other-years-subtitle {
+        font-size: 12px;
+    }
+    
+    .other-years-content {
+        padding: 0 15px 20px;
+    }
+    
+    .years-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .year-card {
+        padding: 12px 8px;
+    }
+    
+    .year-number {
+        font-size: 20px;
+    }
+    
+    .year-label {
+        font-size: 10px;
+    }
+    
+    .current-badge {
+        font-size: 9px;
+        padding: 3px 6px;
+        min-height: 18px;
+        border-radius: 10px;
+        top: -6px;
+        right: -6px;
+    }
+}

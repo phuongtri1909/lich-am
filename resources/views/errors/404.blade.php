@@ -23,7 +23,6 @@
         }
 
         .error-container {
-            background-image: url('{{ asset('assets/images/dev/bg-error-page.webp') }}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

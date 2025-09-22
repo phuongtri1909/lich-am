@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
-use Spatie\Translatable\HasTranslations;
 
 class SeoSetting extends Model
 {
-    use HasFactory, HasTranslations;
+    use HasFactory;
 
     protected $fillable = [
         'page_key',
@@ -21,13 +20,10 @@ class SeoSetting extends Model
     ];
 
     protected $casts = [
-        'is_active' => 'boolean'
-    ];
-
-    public $translatable = [
-        'title',
-        'description',
-        'keywords'
+        'is_active' => 'boolean',
+        'title' => 'array',
+        'description' => 'array',
+        'keywords' => 'array'
     ];
 
     /**

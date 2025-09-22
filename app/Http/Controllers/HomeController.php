@@ -2,36 +2,69 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Faq;
-use App\Models\Blog;
-use App\Models\Brand;
-use App\Models\Feature;
-use App\Models\Product;
-use App\Models\Industry;
-use App\Models\ImageHome;
-use App\Models\BannerHome;
-use App\Models\BannerPage;
-use App\Models\DressStyle;
-use App\Models\IntroImage;
-use App\Models\ProductView;
-use App\Models\IntroFeature;
-use App\Models\ReviewRating;
-use App\Models\SeoSetting;
+use App\Services\LunarCalendarService;
+use App\Services\SolarTermService;
+use App\Services\SexagenaryService;
+use App\Services\SeoService;
 use Illuminate\Http\Request;
-use App\Models\IntroLocation;
-use App\Models\SlideLocation;
-use App\Models\VisionMission;
-use App\Models\FeatureSection;
-use App\Models\ProductVariant;
-use App\Models\GeneralIntroduction;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\ValidationException;
 
 class HomeController extends Controller
 {
+    protected $lunarCalendarService;
+    protected $solarTermService;
+    protected $sexagenaryService;
+    protected $seoService;
+
+    public function __construct(
+        LunarCalendarService $lunarCalendarService,
+        SolarTermService $solarTermService,
+        SexagenaryService $sexagenaryService,
+        SeoService $seoService
+    ) {
+        $this->lunarCalendarService = $lunarCalendarService;
+        $this->solarTermService = $solarTermService;
+        $this->sexagenaryService = $sexagenaryService;
+        $this->seoService = $seoService;
+    }
+
     public function index(Request $request)
     {
+        // Set SEO
+        $this->seoService->setHomeSeo();
 
-        return view('client.pages.home');
+        // Lấy thông tin lịch âm hiện tại
+        $lunarInfo = $this->lunarCalendarService->getCurrentLunarInfo();
+        
+        // Lấy lịch tháng hiện tại
+        $monthCalendar = $this->lunarCalendarService->getCurrentMonthCalendar();
+        
+        // Lấy thông tin tiết khí hiện tại
+        $solarTerm = $this->solarTermService->getCurrentSolarTerm();
+        
+        // Lấy thông tin can chi hiện tại
+        $sexagenary = $this->sexagenaryService->getCurrentSexagenary();
+        
+        // Lấy giờ hoàng đạo từ URL
+        $currentYear = date('Y');
+        $currentMonth = date('m');
+        $currentDay = date('d');
+        $auspiciousHours = $this->lunarCalendarService->getAuspiciousHours($currentYear, $currentMonth, $currentDay);
+        
+        // Lấy thông tin ngày tốt xấu từ URL
+        $dayFortune = $this->lunarCalendarService->getDayFortune($currentYear, $currentMonth, $currentDay);
+        
+        // Lấy chi tiết xem tốt xấu từ URL
+        $dayDetail = $this->lunarCalendarService->crawlDayDetail($currentYear, $currentMonth, $currentDay);
+        $vncalDetail = $dayDetail['vncal_detail'] ?? '';
+
+        return view('client.pages.home', compact(
+            'lunarInfo',
+            'monthCalendar', 
+            'solarTerm',
+            'sexagenary',
+            'auspiciousHours',
+            'dayFortune',
+            'vncalDetail'
+        ));
     }
 }

@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+    @vite('resources/assets/admin/css/styles.css')
+    @vite('resources/assets/frontend/css/auth.css')
 
 </head>
 <body class="d-flex align-items-center justify-content-center min-vh-100">
@@ -31,7 +32,7 @@
         <div class="login-container">
             <div class="login-card card">
                 <div class="login-header text-center">
-                    <img src="{{ asset('assets/images/logo/logo-color.png') }}" alt="Cà Phê Tam Giao" class="img-fluid">
+                    <img src="{{ asset('/images/logo/logo-site.png') }}" alt="{{ config('app.name') }}" class="img-fluid">
                     <h4>Đăng nhập quản trị</h4>
                 </div>
 
@@ -84,7 +85,7 @@
                     </form>
 
                     <div class="mt-4 text-center">
-                        <p class="form-text">© {{ date('Y') }} CosmoPark Admin. All rights reserved.</p>
+                        <p class="form-text">© {{ date('Y') }} {{ config('app.name') }} Admin. All rights reserved.</p>
                     </div>
                 </div>
             </div>
